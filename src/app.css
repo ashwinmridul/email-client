@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    min-width: 900px;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+}

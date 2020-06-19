@@ -1,0 +1,10 @@
+.list-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.list {
+    width: 30%;
+    min-width: 300px;
+    border-right: 1px solid lightskyblue;
+}

@@ -1,0 +1,7 @@
+.navigator {
+    width: 20%;
+    min-width: 200px;
+    min-height: calc(100vh - 52px);
+    background-color: #eeeeee;
+    border-right: 1px solid lightskyblue;
+}
