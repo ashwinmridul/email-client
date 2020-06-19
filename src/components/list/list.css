@@ -1,10 +1,20 @@
 .list-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 200px);
 }
 
 .list {
-    width: 30%;
-    min-width: 300px;
-    border-right: 1px solid lightskyblue;
+  width: 400px;
+  border-right: 1px solid lightskyblue;
+}
+
+.list-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content {
+  width: calc(100% - 400px);
 }

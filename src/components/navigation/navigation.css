@@ -1,7 +1,33 @@
 .navigator {
-    width: 20%;
-    min-width: 200px;
-    min-height: calc(100vh - 52px);
-    background-color: #eeeeee;
-    border-right: 1px solid lightskyblue;
+  width: 200px;
+  min-height: calc(100vh - 52px);
+  background-color: #eeeeee;
+  border-right: 1px solid lightskyblue;
+}
+
+.list-type {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+.list-type > li {
+  padding: 10px;
+  color: #666666;
+  cursor: pointer;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.list-type > li:not(.selected):hover {
+  background-color: #dddddd;
+}
+
+.list-type > li.selected {
+  background-color: bisque;
+}
+
+.list-count {
+  float: right;
 }

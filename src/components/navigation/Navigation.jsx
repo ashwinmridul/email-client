@@ -1,16 +1,38 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './navigation.css';
+import { listTypes } from '../../constants/constants.js';
 
-const Navigation = () => (
-    <div className='navigator'>
-        <ul>
-            <li><Link to='/inbox'>Inbox</Link></li>
-            <li><Link to='/spam'>Spam</Link></li>
-            <li><Link to='/deleted'>Deleted</Link></li>
-            <li><Link to='/custom'>Custom</Link></li>
-        </ul>
-    </div>
-);
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedType: props.location.pathname.replace('/', '')
+    };
+    this.changeType = this.changeType.bind(this);
+  }
 
-export default Navigation;
+  changeType(type) {
+    this.setState({
+      selectedType: type
+    }, () => {
+      this.props.history.push(`/${type}`);
+    });
+  }
+
+  render() {
+    return (<div className='navigator'>
+      <ul className='list-type'>
+        {listTypes.map((type, i) => {
+          const count = this.props.counts[type];
+          return <li className={`${this.state.selectedType === type ? 'selected' : ''}`} onClick={() => this.changeType(type)} key={i}>
+              {`${type[0].toUpperCase()}${type.substring(1)}`}
+              {count && <span className='list-count'>{count}</span>}
+          </li>
+        })}
+      </ul>
+    </div>);
+  }
+}
+
+export default withRouter(Navigation);

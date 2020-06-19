@@ -1,0 +1,1 @@
+export const listTypes = ['inbox', 'spam', 'deleted', 'custom'];
