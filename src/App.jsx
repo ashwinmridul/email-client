@@ -18,11 +18,13 @@ class App extends React.Component {
     })
     this.state = {
       counts,
-      selectedItem: null
+      selectedItem: null,
+      showFlagged: false
     };
     this.onRead = this.onRead.bind(this);
     this.onSelect = this.onSelect.bind(this);
     this.onDelete = this.onDelete.bind(this);
+    this.onToggleFlagged = this.onToggleFlagged.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +76,12 @@ class App extends React.Component {
     });
   }
 
+  onToggleFlagged() {
+    this.setState({
+      showFlagged: !this.state.showFlagged
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -83,7 +91,14 @@ class App extends React.Component {
             <Navigation counts={this.state.counts} />
             <Switch>
               {listTypes.length ? <Redirect exact from='/' to={`/${listTypes[0]}`} /> : null}
-              <Route path={`/:listType(${listTypes.join('|')})`} component={(props) => <List onSelect={this.onSelect} onDelete={this.onDelete} selectedItem={this.state.selectedItem} {...props} />} />
+              <Route path={`/:listType(${listTypes.join('|')})`} component={(props) => <List
+                onSelect={this.onSelect}
+                onDelete={this.onDelete}
+                onToggleFlagged={this.onToggleFlagged}
+                selectedItem={this.state.selectedItem}
+                showFlagged={this.state.showFlagged}
+                {...props} />}
+              />
               <Route path='*' component={() => (<div className='page-not-found'>
                 Oops! The page you are trying to access does not exist
               </div>)} />

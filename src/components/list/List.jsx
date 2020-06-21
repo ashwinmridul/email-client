@@ -11,14 +11,12 @@ class List extends React.Component {
     super(props);
     this.state = {
       data: [],
-      listType: props.match.params.listType,
-      showFlagged: false
+      listType: props.match.params.listType
     };
     this.getData = this.getData.bind(this);
     this.selectItem = this.selectItem.bind(this);
     this.toggleFlag = this.toggleFlag.bind(this);
     this.deleteMessage = this.deleteMessage.bind(this);
-    this.toggleFlagged = this.toggleFlagged.bind(this);
   }
 
   getData() {
@@ -37,12 +35,6 @@ class List extends React.Component {
       data
     });
     setFlag(this.state.listType, item.mId, item.flagged);
-  }
-
-  toggleFlagged() {
-    this.setState({
-      showFlagged: !this.state.showFlagged
-    });
   }
 
   deleteMessage(item) {
@@ -67,14 +59,15 @@ class List extends React.Component {
   }
 
   render() {
-    const filteredData = this.state.data.filter(item => !this.state.showFlagged || (this.state.showFlagged && item.flagged));
+    const filteredData = this.state.data.filter(item => !this.props.showFlagged || (this.props.showFlagged && item.flagged));
     const containsFlagged = this.state.data.some(item => item.flagged);
 
     return (
       <div className='list-container'>
         <div className='list'>
           {containsFlagged ? <div className='filter-container'>
-            <input type='checkbox' onChange={this.toggleFlagged} value={this.state.showFlagged} /> Display only flagged messages
+            <input type='checkbox' onChange={this.props.onToggleFlagged} checked={this.props.showFlagged} />
+            <span>Display only flagged messages</span>
           </div> : null}
           <ul>
             {filteredData.length ? filteredData.map(item => (<li className={`${item.unread ? '' : 'read'} ${this.props.selectedItem && item.mId === this.props.selectedItem.mId ? 'selected' : ''}`} key={item.mId}>
