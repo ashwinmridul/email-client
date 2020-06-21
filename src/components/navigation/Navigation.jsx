@@ -12,6 +12,15 @@ class Navigation extends React.Component {
     this.changeType = this.changeType.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const newType = nextProps.location.pathname.replace('/', '');
+    if (newType !== this.state.selectedType) {
+      this.setState({
+        selectedType: newType
+      });
+    }
+  }
+
   changeType(type) {
     this.setState({
       selectedType: type
