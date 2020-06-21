@@ -94,7 +94,7 @@ class List extends React.Component {
           </ul>
         </div>
         <div className='content'>
-          {this.props.selectedItem ? <div className='email-container'>
+          {this.props.selectedItem && filteredData.some(item => item.mId === this.props.selectedItem.mId) ? <div className='email-container'>
             <div className='email-content-subject'>{this.props.selectedItem.subject}</div>
             <div className='email-content' dangerouslySetInnerHTML={{
               __html: this.props.selectedItem.content
