@@ -1,6 +1,6 @@
 # Email Client
 
-This is an email client to display messages seaparated with categories.
+This is an email client to display messages separated with categories.
 ### Dev versions:
   - node: `8.11.3`
   - npm: `5.6.0`
