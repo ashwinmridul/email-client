@@ -97,16 +97,3 @@
 .list li.selected {
   background-color: cornsilk;
 }
-
-.list li.selected:after{
-  content: '';
-  position: relative;
-  left: 10px;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-top: 26px solid transparent;
-  border-bottom: 26px solid transparent;
-  border-left: 15px solid cornsilk;
-  clear: both;
-}
