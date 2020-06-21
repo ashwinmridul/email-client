@@ -12,7 +12,7 @@ This is an email client to display messages separated with categories.
    - Getting messages from `JSON` and storing them in `Session Storage` to keep the state.
    - Storing email message types in `listTypes` constant and `reusing` it.
    - Keeping data for each message type in `src/data` folder
-   - Using `promises` for get/set/delete data operatrions
+   - Using `promises` for get/set flag/set unread/delete messages
    - Landing on the `index route` will redirect it to the first message types route in the list i.e. `inbox` here.
    - Landing on an `invalid route` will display a page with left navigation and a message on the right container.
    - Left navigation will contain message types with number of unread counts next to each type. No count to be shown if all the messages of that category is read.
