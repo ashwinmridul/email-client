@@ -7,3 +7,11 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.page-not-found {
+  width: calc(100% - 200px);
+  text-align: center;
+  font-size: 28px;
+  color: #cccccc;
+  margin-top: 50px;
+}

@@ -27,7 +27,7 @@ class Navigation extends React.Component {
           const count = this.props.counts[type];
           return <li className={`${this.state.selectedType === type ? 'selected' : ''}`} onClick={() => this.changeType(type)} key={i}>
               {`${type[0].toUpperCase()}${type.substring(1)}`}
-              {count && <span className='list-count'>{count}</span>}
+              {count ? <span className='list-count'>{count}</span> : null}
           </li>
         })}
       </ul>

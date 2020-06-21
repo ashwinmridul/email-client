@@ -1,14 +1,14 @@
 [
 	{
 		"mId": "guid-5",
-		"unread": true,
-		"subject" : "Training Program",
-		"content" : "About Microsoft Virtual Academy<br/>Microsoft Virtual Academy provides free online training by world-class experts to help you build your technical skills and advance your career. Make it your destination of choice to get started on the latest Microsoft technologies and join this vibrant community."
+		"unread": false,
+		"subject" : "Are Plain Text Emails Right for Me?",
+		"content" : "We’ve said it many times before, and we’ll continue saying it as long as we can: It’s important to test your emails and track engagement to see what works best for your subscribers. When you’re considering HTML vs. plain text emails, remember that what works for one email may not work for another; as you probably know, much of email marketing is about trial-and-error."
 	},
 	{
 		"mId": "guid-6",
-		"unread": false,
-		"subject" : "Empower your future",
-		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups, servicing an active community of thousands across Microsoft"
+		"unread": true,
+		"subject" : "It May Be a Simple Text Email, but it Doesn’t Mean You Should Skip Testing",
+		"content" : "Whether you have a plain text email or an HTML-rich masterpiece, it is crucial to test your email every time. Small HTML code and design changes can look completely different from one client to another. Email on Acid will save you time and help you send better email campaigns by letting you preview your email on more than 70 email clients and devices."
 	}
 ]
